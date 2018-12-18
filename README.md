@@ -1,6 +1,6 @@
 # Gatsby TypeScript MDX Prismjs starter
 
-Demo: <https://>
+Demo: <https://infallible-brown-28846b.netlify.com/>
 
 ## Getting started
 

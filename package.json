@@ -1,0 +1,96 @@
+{
+  "name": "gatsby-typescript-mdx-prismjs-starter",
+  "description": "Gatsby TS MDX Prismsjs Starter",
+  "version": "1.0.0",
+  "author": "Tyler Greulich <tgreul6@gmail.com>",
+  "dependencies": {
+    "babel-plugin-styled-components": "^1.9.4",
+    "gatsby": "^2.0.53",
+    "gatsby-image": "^2.0.20",
+    "gatsby-mdx": "^0.2.0",
+    "gatsby-plugin-manifest": "^2.0.9",
+    "gatsby-plugin-offline": "^2.0.16",
+    "gatsby-plugin-react-helmet": "^3.0.2",
+    "gatsby-plugin-sharp": "^2.0.14",
+    "gatsby-plugin-styled-components": "^3.0.4",
+    "gatsby-plugin-typescript": "^2.0.3",
+    "gatsby-remark-prismjs": "^3.1.4",
+    "gatsby-source-filesystem": "^2.0.8",
+    "gatsby-transformer-remark": "^2.1.15",
+    "gatsby-transformer-sharp": "^2.1.8",
+    "prismjs": "^1.15.0",
+    "prop-types": "^15.6.2",
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3",
+    "react-helmet": "^5.2.0",
+    "react-testing-library": "^5.3.2",
+    "styled-components": "^4.1.2"
+  },
+  "keywords": [
+    "gatsby",
+    "mdx",
+    "typescript",
+    "prismjs",
+    "styled-components"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "start": "npm run develop",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "@mdx-js/loader": "^0.16.6",
+    "@mdx-js/mdx": "^0.16.6",
+    "@mdx-js/tag": "^0.16.6",
+    "@types/jest": "^23.3.10",
+    "@types/react-helmet": "^5.0.7",
+    "@types/styled-components": "^4.1.4",
+    "jest": "^23.6.0",
+    "jest-dom": "^3.0.0",
+    "loader-utils": "^1.1.0",
+    "prettier": "^1.15.2",
+    "ts-jest": "^23.10.5",
+    "tslint": "^5.11.0",
+    "typescript": "^3.2.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tylergreulich/gatsby-typescript-mdx-prismjs-starter"
+  },
+  "jest": {
+    "setupTestFrameworkScriptFile": "./jest.setup.js",
+    "globals": {
+      "__PATH_PREFIX__": ""
+    },
+    "testURL": "http://localhost",
+    "transform": {
+      "^.+\\.(tsx?|jsx?)$": "ts-jest"
+    },
+    "transformIgnorePatterns": [
+      "node_modules/(?!(gatsby)/)"
+    ],
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx)$",
+    "testPathIgnorePatterns": [
+      "node_modules",
+      ".cache"
+    ],
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "moduleNameMapper": {
+      "typeface-*": "identity-obj-proxy",
+      ".+\\.(css|styl|less|sass|scss)$": "identity-obj-proxy",
+      ".+\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/src/__tests__/__mocks__/file.js"
+    },
+    "collectCoverage": false,
+    "coverageReporters": [
+      "lcov",
+      "text",
+      "html"
+    ]
+  }
+}

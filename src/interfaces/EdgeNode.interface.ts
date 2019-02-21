@@ -1,6 +1,6 @@
-export interface EdgeNode<T> {
+export interface EdgeNode<Type> {
   node: {
-    frontmatter: { [P in keyof T]: T[P] };
+    frontmatter: { [Property in keyof Type]: Type[Property] };
     excerpt?: string;
   };
-};
+}

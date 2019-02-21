@@ -1,12 +1,11 @@
+import { Link } from 'gatsby';
 import * as React from 'react';
 import styled from 'styled-components';
-import { Link } from 'gatsby';
-
 import GatsbyLogo from '../images/gatsby-icon.png';
 
-type HeaderProps = {
+interface HeaderProps {
   siteTitle: string;
-};
+}
 
 const HeaderWrapper = styled.div`
   background: ${props => props.theme.colorPrimary};

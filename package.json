@@ -5,7 +5,7 @@
   "author": "Tyler Greulich <tgreul6@gmail.com>",
   "dependencies": {
     "babel-plugin-styled-components": "^1.9.4",
-    "gatsby": "^2.0.53",
+    "gatsby": "^2.1.13",
     "gatsby-image": "^2.0.20",
     "gatsby-mdx": "^0.2.0",
     "gatsby-plugin-manifest": "^2.0.9",
@@ -20,8 +20,8 @@
     "gatsby-transformer-sharp": "^2.1.8",
     "prismjs": "^1.15.0",
     "prop-types": "^15.6.2",
-    "react": "^16.6.3",
-    "react-dom": "^16.6.3",
+    "react": "^16.8.2",
+    "react-dom": "^16.8.2",
     "react-helmet": "^5.2.0",
     "react-testing-library": "^5.3.2",
     "styled-components": "^4.1.2"

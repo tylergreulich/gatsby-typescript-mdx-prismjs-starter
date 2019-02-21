@@ -1,7 +1,7 @@
+import { Link } from 'gatsby';
 import * as React from 'react';
-import { Link, graphql, StaticQuery } from 'gatsby';
 import styled from 'styled-components';
-import { PostsQueryData } from '../interfaces/PostsQuery.interface';
+import { useListingQuery } from '../hooks/useListingQuery';
 
 const Post = styled.article`
   box-shadow: 0 0.3rem 1rem rgba(25, 17, 34, 0.05);
@@ -21,53 +21,37 @@ const Post = styled.article`
   p {
     font-size: 0.8rem;
   }
-
-  .read-more {
-    font-size: 0.8rem;
-    text-decoration: underline;
-    color: ${props => props.theme.colorPrimary};
-  }
 `;
 
-const Listing = () => (
-  <StaticQuery
-    query={LISTING_QUERY}
-    render={({ allMdx }: PostsQueryData) =>
-      allMdx.edges!.map(({ node }) => {
-        const { path, title, date } = node.frontmatter;
-
-        return (
-          <Post key={path}>
-            <Link to={`/posts${path}`}>
-              <h2>{title}</h2>
-            </Link>
-            <p>{date}</p>
-            <p>{node.excerpt}</p>
-            <Link to={`/posts${path}`} className="read-more">
-              Read More
-            </Link>
-          </Post>
-        );
-      })
-    }
-  />
-);
-
-const LISTING_QUERY = graphql`
-  query LISTING_QUERY {
-    allMdx(limit: 10, sort: { fields: [frontmatter___date], order: DESC }) {
-      edges {
-        node {
-          excerpt
-          frontmatter {
-            path
-            title
-            date(formatString: "MMMM DD, YYYY")
-          }
-        }
-      }
-    }
-  }
+const ReadMoreLink = styled(Link)`
+  font-size: 0.8rem;
+  text-decoration: underline;
+  color: ${props => props.theme.colorPrimary};
 `;
+
+const Listing = () => {
+  const { allMdx } = useListingQuery();
+
+  return (
+    <>
+      {allMdx &&
+        allMdx.edges &&
+        allMdx.edges.map(({ node }) => {
+          const { path, title, date } = node.frontmatter;
+
+          return (
+            <Post key={path}>
+              <Link to={`/posts${path}`}>
+                <h2>{title}</h2>
+              </Link>
+              <p>{date}</p>
+              <p>{node.excerpt}</p>
+              <ReadMoreLink to={`/posts${path}`}>Read More</ReadMoreLink>
+            </Post>
+          );
+        })}
+    </>
+  );
+};
 
 export default Listing;

@@ -2,7 +2,7 @@ import { graphql, useStaticQuery } from 'gatsby';
 import { PostsQueryData } from '../interfaces/PostsQuery.interface';
 
 export const useListingQuery = () => {
-  const { allMdx } = useStaticQuery<PostsQueryData>(graphql`
+  const { allMdx }: PostsQueryData = useStaticQuery(graphql`
     query LISTING_QUERY {
       allMdx(limit: 10, sort: { fields: [frontmatter___date], order: DESC }) {
         edges {

@@ -29,3 +29,11 @@ Run `yarn build` to create a static site ready to host from (`/public`)
   - [x] [Helmet](https://github.com/nfl/react-helmet)
 - [x] [styled-components](https://www.styled-components.com/) for styling
 - [x] [Prismjs](https://prismjs.com/) for syntax highlighting in blog posts
+
+## Changing theme of Prismjs
+
+Go into gatsby-browser.js and replace the theme with what you want
+
+Some of their default themes can be found [here](https://prismjs.com/)
+
+[List of other themes](https://github.com/PrismJS/prism-themes)

@@ -10,7 +10,7 @@ Install this by running the following from your CLI:
 $ gatsby new my-website https://github.com/tylergreulich/gatsby-typescript-mdx-prismjs-starter
 ```
 
-Run `yarn start` to serve your website on <http://localhost:8000>.
+Run `yarn dev` to serve your website on <http://localhost:8000>.
 
 Run `yarn build` to create a static site ready to host from (`/public`)
 

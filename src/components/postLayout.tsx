@@ -9,20 +9,20 @@ const PostLayout: React.FunctionComponent<PostLayoutProps> = ({
   data,
   ...props
 }) => {
-  if (data) {
-    const { title, date } = data.mdx.frontmatter;
-    const { location, children } = props;
-
-    return (
-      <Layout location={location}>
-        <h1>{title}</h1>
-        <em>{date}</em>
-        {children}
-      </Layout>
-    );
+  if (!data) {
+    return null
   }
 
-  return <div>No Post Data</div>;
+  const { title, date } = data.mdx.frontmatter;
+  const { location, children } = props;
+
+  return (
+    <Layout location={location}>
+      <h1>{title}</h1>
+      <em>{date}</em>
+      {children}
+    </Layout>
+  );
 };
 
 export default PostLayout;

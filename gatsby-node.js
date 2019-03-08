@@ -1,8 +1,8 @@
-const componentWithMDXScope = require('gatsby-mdx/component-with-mdx-scope')
-const { resolve } = require('path')
+const componentWithMDXScope = require('gatsby-mdx/component-with-mdx-scope');
+const { resolve } = require('path');
 
 exports.createPages = async ({ graphql, actions }) => {
-  const { createPage } = actions
+  const { createPage } = actions;
 
   const { data } = await graphql(`
     {
@@ -19,7 +19,7 @@ exports.createPages = async ({ graphql, actions }) => {
         }
       }
     }
-  `).catch(error => console.error(error))
+  `).catch(error => console.error(error));
 
   data.allMdx.edges.forEach(({ node }) => {
     createPage({
@@ -28,6 +28,6 @@ exports.createPages = async ({ graphql, actions }) => {
       context: {
         pagePath: node.frontmatter.path,
       },
-    })
-  })
-}
+    });
+  });
+};

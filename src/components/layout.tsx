@@ -36,7 +36,7 @@ const Layout: React.FunctionComponent<LayoutProps> = ({ children }) => {
           title={title}
           meta={[
             { name: 'description', content: description },
-            { name: 'keywords', content: keywords || 'keywords' },
+            { name: 'keywords', content: keywords || 'keywords' }
           ]}
         >
           <html lang="en" />

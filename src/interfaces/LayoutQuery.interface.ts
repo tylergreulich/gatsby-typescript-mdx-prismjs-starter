@@ -1,7 +1,7 @@
 interface Site {
   siteMetadata: {
     title: string;
-    description: string | undefined;
+    description: string;
     keywords: string | undefined;
   };
 }
